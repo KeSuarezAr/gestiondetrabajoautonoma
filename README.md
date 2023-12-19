@@ -14,7 +14,9 @@ La clase `ConexionDB` demuestra el uso del patrón Singleton. Tiene un campo est
 
 ## Uso
 
-La función principal demuestra el uso de las clases `Vehiculo` y `ConexionDB`.Crear una instancia de `Vehiculo` utilizando el constructor por defecto. Crea dos instancias de `ConexionDB` y verifica si son idénticas.
+La función principal demuestra el uso de las clases `Vehiculo` y `ConexionDB`.
+
+Crear una instancia de `Vehiculo` utilizando el constructor por defecto.
 
 ```dart
 void main() {
@@ -29,5 +31,22 @@ void main() {
   } else {
     print('Las dos variables apuntan a instancias diferentes');
   }
+}
+```
+
+Crea dos instancias de `ConexionDB` y verifica si son idénticas.
+
+```dart
+void main(List<String> arguments) {
+  Vehiculo vehiculo1 = Vehiculo();
+  Vehiculo vehiculo2 = Vehiculo.conCapacidad(4);
+  Vehiculo vehiculo3 = Vehiculo.desdeMotor('Motor 2.0');
+
+  print(
+      'Motor: ${vehiculo1.motor}, Capacidad: ${vehiculo1.capacidad} pasajeros');
+  print(
+      'Motor: ${vehiculo2.motor}, Capacidad: ${vehiculo2.capacidad} pasajeros');
+  print(
+      'Motor: ${vehiculo3.motor}, Capacidad: ${vehiculo3.capacidad} pasajeros');
 }
 ```
